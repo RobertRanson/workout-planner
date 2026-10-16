@@ -1,0 +1,4427 @@
+{
+ "version": 1,
+ "workouts": [
+  {
+   "id": "chest",
+   "name": "Chest & Triceps",
+   "exercises": [
+    {
+     "id": "dumbbell-bench-press",
+     "name": "Dumbbell Bench Press",
+     "reps": [
+      8,
+      10
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 5,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-bench-press.html"
+    },
+    {
+     "id": "incline-dumbbell-bench-press",
+     "name": "Incline Dumbbell Bench Press",
+     "reps": [
+      8,
+      10
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/incline-dumbbell-bench-press.html"
+    },
+    {
+     "id": "dumbbell-floor-press",
+     "name": "Dumbbell Floor Press",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-floor-press.html"
+    },
+    {
+     "id": "standing-dumbbell-press",
+     "name": "Standing Dumbbell Press",
+     "reps": [
+      8,
+      10
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/standing-dumbbell-press.html"
+    },
+    {
+     "id": "dumbbell-lateral-raise",
+     "name": "Dumbbell Lateral Raise",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-lateral-raise.html"
+    },
+    {
+     "id": "dumbbell-tricep-kickback",
+     "name": "Dumbbell Tricep Kickback",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-kickback.html"
+    }
+   ]
+  },
+  {
+   "id": "legs1",
+   "name": "Legs & Core 1",
+   "exercises": [
+    {
+     "id": "dumbbell-goblet-squat",
+     "name": "Dumbbell Goblet Squat",
+     "reps": [
+      8,
+      10
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat"
+    },
+    {
+     "id": "dumbbell-stiff-leg-deadlift",
+     "name": "Dumbbell Stiff Leg Deadlift",
+     "reps": [
+      8,
+      10
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-stiff-leg-deadlift.html"
+    },
+    {
+     "id": "dumbbell-rear-lunge",
+     "name": "Dumbbell Rear Lunge",
+     "reps": [
+      8,
+      10
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-rear-lunge.html"
+    },
+    {
+     "id": "dumbbell-frog-squat",
+     "name": "Dumbbell Frog Squat",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/frog-squat.html"
+    },
+    {
+     "id": "dumbbell-calf-raise",
+     "name": "Dumbbell Calf Raise",
+     "reps": null,
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": null
+    },
+    {
+     "id": "weighted-crunch",
+     "name": "Weighted Crunch",
+     "reps": null,
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": null
+    },
+    {
+     "id": "side-plank",
+     "name": "Side Plank",
+     "reps": null,
+     "each": false,
+     "kind": "time",
+     "sets": 3,
+     "link": null
+    }
+   ]
+  },
+  {
+   "id": "back",
+   "name": "Back & Biceps",
+   "exercises": [
+    {
+     "id": "dumbbell-bent-over-row",
+     "name": "Dumbbell Bent Over Row",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-row.html"
+    },
+    {
+     "id": "tripod-dumbbell-row",
+     "name": "Tripod Dumbbell Row",
+     "reps": [
+      8,
+      12
+     ],
+     "each": true,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/tripod-dumbbell-row"
+    },
+    {
+     "id": "dumbbell-pull-over",
+     "name": "Dumbbell Pull Over",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-pullover.html"
+    },
+    {
+     "id": "reverse-grip-dumbbell-row",
+     "name": "Reverse Grip Dumbbell Row",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/reverse-grip-bent-over-dumbbell-row.html"
+    },
+    {
+     "id": "dumbbell-bicep-curl",
+     "name": "Dumbbell Bicep Curl",
+     "reps": [
+      10,
+      15
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/standing-dumbbell-curl.html"
+    },
+    {
+     "id": "dumbbell-hammer-curl",
+     "name": "Dumbbell Hammer Curl",
+     "reps": [
+      10,
+      15
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/standing-hammer-curl.html"
+    }
+   ]
+  },
+  {
+   "id": "legs2",
+   "name": "Legs & Core 2",
+   "exercises": [
+    {
+     "id": "dumbbell-squat",
+     "name": "Dumbbell Squat",
+     "reps": [
+      8,
+      10
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-squat.html"
+    },
+    {
+     "id": "dumbbell-deadlift",
+     "name": "Dumbbell Deadlift",
+     "reps": [
+      8,
+      10
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-deadlift.html"
+    },
+    {
+     "id": "dumbbell-split-squat",
+     "name": "Dumbbell Split Squat",
+     "reps": [
+      8,
+      12
+     ],
+     "each": true,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-split-squat"
+    },
+    {
+     "id": "dumbbell-hip-thrust",
+     "name": "Dumbbell Hip Thrust",
+     "reps": [
+      10,
+      15
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": null
+    },
+    {
+     "id": "dumbbell-calf-raise",
+     "name": "Dumbbell Calf Raise",
+     "reps": [
+      20,
+      20
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/seated-dumbbell-calf-raise.html"
+    },
+    {
+     "id": "dumbbell-side-bends",
+     "name": "Dumbbell Side Bends",
+     "reps": [
+      15,
+      15
+     ],
+     "each": true,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-side-bends.html"
+    },
+    {
+     "id": "plank",
+     "name": "Plank",
+     "reps": null,
+     "each": false,
+     "kind": "time",
+     "sets": 3,
+     "link": null
+    }
+   ]
+  },
+  {
+   "id": "upper",
+   "name": "Upper Body",
+   "exercises": [
+    {
+     "id": "one-arm-dumbbell-rows",
+     "name": "One Arm Dumbbell Rows",
+     "reps": [
+      8,
+      10
+     ],
+     "each": true,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/one-arm-dumbbell-row.html"
+    },
+    {
+     "id": "dumbbell-arnold-press",
+     "name": "Dumbbell Arnold Press",
+     "reps": [
+      8,
+      10
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/seated-arnold-press.html"
+    },
+    {
+     "id": "incline-dumbbell-press",
+     "name": "Incline Dumbbell Press",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 4,
+     "link": "https://www.muscleandstrength.com/exercises/incline-dumbbell-bench-press.html"
+    },
+    {
+     "id": "chest-supported-dumbbell-row",
+     "name": "Chest Supported Dumbbell Row",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/chest-supported-dumbbell-row"
+    },
+    {
+     "id": "dumbbell-pinwheel-curl",
+     "name": "Dumbbell Pinwheel Curl",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 2,
+     "link": "https://www.muscleandstrength.com/exercises/hammer-curl-across-the-body.html"
+    },
+    {
+     "id": "overhead-dumbbell-tricep-extension",
+     "name": "Overhead Dumbbell Tricep Extension",
+     "reps": [
+      8,
+      12
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/two-arm-standing-dumbbell-extension.html"
+    },
+    {
+     "id": "dumbbell-shrug",
+     "name": "Dumbbell Shrug",
+     "reps": [
+      12,
+      15
+     ],
+     "each": false,
+     "kind": "weight",
+     "sets": 3,
+     "link": "https://www.muscleandstrength.com/exercises/dumbbell-shrugs.html"
+    }
+   ]
+  }
+ ],
+ "sessions": [
+  {
+   "id": "legs1-2021-04-04",
+   "workout": "legs1",
+   "date": "2021-04-04",
+   "exercises": {
+    "dumbbell-goblet-squat": [
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "dumbbell-stiff-leg-deadlift": [
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 12
+     },
+     {
+      "weight": 10,
+      "reps": 12
+     }
+    ],
+    "dumbbell-rear-lunge": [
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 12
+     },
+     {
+      "weight": 10,
+      "reps": 12
+     }
+    ],
+    "dumbbell-frog-squat": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 10,
+      "reps": 20
+     },
+     {
+      "weight": 10,
+      "reps": 20
+     },
+     {
+      "weight": 11,
+      "reps": 20
+     },
+     {
+      "weight": 11,
+      "reps": 20
+     }
+    ],
+    "weighted-crunch": [
+     {
+      "weight": 5,
+      "reps": 20
+     },
+     {
+      "weight": 5,
+      "reps": 20
+     },
+     {
+      "weight": 5,
+      "reps": 20
+     }
+    ],
+    "side-plank": [
+     {
+      "time": 20
+     },
+     {
+      "time": 20
+     },
+     {
+      "time": 50
+     }
+    ]
+   }
+  },
+  {
+   "id": "back-2021-04-07",
+   "workout": "back",
+   "date": "2021-04-07",
+   "exercises": {
+    "dumbbell-bent-over-row": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "tripod-dumbbell-row": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     }
+    ],
+    "dumbbell-pull-over": [
+     {
+      "weight": 9,
+      "reps": 12
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 12
+     }
+    ],
+    "reverse-grip-dumbbell-row": [
+     {
+      "weight": 10,
+      "reps": 12
+     },
+     {
+      "weight": 10,
+      "reps": 12
+     },
+     {
+      "weight": 11,
+      "reps": 12
+     },
+     {
+      "weight": 11,
+      "reps": 12
+     }
+    ],
+    "dumbbell-bicep-curl": [
+     {
+      "weight": 8,
+      "reps": 4
+     },
+     {
+      "weight": 7,
+      "reps": 8
+     },
+     {
+      "weight": 7,
+      "reps": 6
+     }
+    ],
+    "dumbbell-hammer-curl": [
+     {
+      "weight": 7,
+      "reps": 4
+     },
+     {
+      "weight": 5,
+      "reps": 8
+     },
+     {
+      "weight": 5,
+      "reps": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs2-2021-04-10",
+   "workout": "legs2",
+   "date": "2021-04-10",
+   "exercises": {
+    "dumbbell-squat": [
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     }
+    ],
+    "dumbbell-deadlift": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "dumbbell-split-squat": [
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ],
+    "dumbbell-hip-thrust": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 15
+     },
+     {
+      "weight": 14,
+      "reps": 15
+     },
+     {
+      "weight": 14,
+      "reps": 15
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 11,
+      "reps": 20
+     },
+     {
+      "weight": 11,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     }
+    ],
+    "dumbbell-side-bends": [
+     {
+      "weight": 11,
+      "reps": 15
+     },
+     {
+      "weight": 11,
+      "reps": 15
+     },
+     {
+      "weight": 14,
+      "reps": 15
+     }
+    ],
+    "plank": [
+     {
+      "time": 20
+     },
+     {
+      "time": 20
+     },
+     {
+      "time": 60
+     }
+    ]
+   }
+  },
+  {
+   "id": "upper-2021-04-12",
+   "workout": "upper",
+   "date": "2021-04-12",
+   "exercises": {
+    "one-arm-dumbbell-rows": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 12
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-arnold-press": [
+     {
+      "weight": 8,
+      "reps": 10
+     },
+     {
+      "weight": 8,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ],
+    "incline-dumbbell-press": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "chest-supported-dumbbell-row": [
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 12
+     },
+     {
+      "weight": 9,
+      "reps": 12
+     }
+    ],
+    "dumbbell-pinwheel-curl": [
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     }
+    ],
+    "overhead-dumbbell-tricep-extension": [
+     {
+      "weight": 10,
+      "reps": 12
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 6
+     }
+    ],
+    "dumbbell-shrug": [
+     {
+      "weight": 20,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 15
+     }
+    ]
+   }
+  },
+  {
+   "id": "chest-2021-04-17",
+   "workout": "chest",
+   "date": "2021-04-17",
+   "exercises": {
+    "dumbbell-bench-press": [
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "incline-dumbbell-bench-press": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs1-2021-04-19",
+   "workout": "legs1",
+   "date": "2021-04-19",
+   "exercises": {
+    "dumbbell-goblet-squat": [
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 10
+     }
+    ],
+    "dumbbell-stiff-leg-deadlift": [
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "dumbbell-rear-lunge": [
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "dumbbell-frog-squat": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 11,
+      "reps": 20
+     },
+     {
+      "weight": 11,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     }
+    ],
+    "weighted-crunch": [
+     {
+      "weight": 5,
+      "reps": 20
+     },
+     {
+      "weight": 7,
+      "reps": 20
+     },
+     {
+      "weight": 7,
+      "reps": 20
+     }
+    ],
+    "side-plank": [
+     {
+      "time": 25
+     },
+     {
+      "time": 25
+     },
+     {
+      "time": 55
+     }
+    ]
+   }
+  },
+  {
+   "id": "back-2021-05-07",
+   "workout": "back",
+   "date": "2021-05-07",
+   "exercises": {
+    "dumbbell-bent-over-row": [
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     }
+    ],
+    "tripod-dumbbell-row": [
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     }
+    ],
+    "dumbbell-pull-over": [
+     {
+      "weight": 9,
+      "reps": 12
+     },
+     {
+      "weight": 9,
+      "reps": 12
+     },
+     {
+      "weight": 10,
+      "reps": 12
+     }
+    ],
+    "reverse-grip-dumbbell-row": [
+     {
+      "weight": 10,
+      "reps": 12
+     },
+     {
+      "weight": 11,
+      "reps": 15
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 12
+     }
+    ],
+    "dumbbell-bicep-curl": [
+     {
+      "weight": 8,
+      "reps": 8
+     },
+     {
+      "weight": 8,
+      "reps": 10
+     },
+     {
+      "weight": 7,
+      "reps": 10
+     }
+    ],
+    "dumbbell-hammer-curl": [
+     {
+      "weight": 7,
+      "reps": 10
+     },
+     {
+      "weight": 7,
+      "reps": 10
+     },
+     {
+      "weight": 7,
+      "reps": 8
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs2-2021-05-13",
+   "workout": "legs2",
+   "date": "2021-05-13",
+   "exercises": {
+    "dumbbell-squat": [
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     }
+    ],
+    "dumbbell-deadlift": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "dumbbell-split-squat": [
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ],
+    "dumbbell-hip-thrust": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 15
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 15
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     }
+    ],
+    "dumbbell-side-bends": [
+     {
+      "weight": 14,
+      "reps": 15
+     },
+     {
+      "weight": 14,
+      "reps": 15
+     },
+     {
+      "weight": 14,
+      "reps": 15
+     }
+    ],
+    "plank": [
+     {
+      "time": 20
+     },
+     {
+      "time": 20
+     },
+     {
+      "time": 65
+     }
+    ]
+   }
+  },
+  {
+   "id": "upper-2021-05-19",
+   "workout": "upper",
+   "date": "2021-05-19",
+   "exercises": {
+    "one-arm-dumbbell-rows": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "dumbbell-arnold-press": [
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 8
+     }
+    ],
+    "incline-dumbbell-press": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "dumbbell-pinwheel-curl": [
+     {
+      "weight": 9,
+      "reps": 12
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ],
+    "overhead-dumbbell-tricep-extension": [
+     {
+      "weight": 11,
+      "reps": 12
+     },
+     {
+      "weight": 11,
+      "reps": 12
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "dumbbell-shrug": [
+     {
+      "weight": 20,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 15
+     }
+    ]
+   }
+  },
+  {
+   "id": "chest-2021-05-24",
+   "workout": "chest",
+   "date": "2021-05-24",
+   "exercises": {
+    "dumbbell-bench-press": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     }
+    ],
+    "incline-dumbbell-bench-press": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "dumbbell-floor-press": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs1-2021-06-08",
+   "workout": "legs1",
+   "date": "2021-06-08",
+   "exercises": {
+    "dumbbell-goblet-squat": [
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     }
+    ],
+    "dumbbell-stiff-leg-deadlift": [
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "dumbbell-rear-lunge": [
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "dumbbell-frog-squat": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 11,
+      "reps": 20
+     },
+     {
+      "weight": 11,
+      "reps": 20
+     },
+     {
+      "weight": 11,
+      "reps": 20
+     },
+     {
+      "weight": 11,
+      "reps": 20
+     }
+    ],
+    "weighted-crunch": [
+     {
+      "weight": 7,
+      "reps": 20
+     },
+     {
+      "weight": 7,
+      "reps": 20
+     },
+     {
+      "weight": 7,
+      "reps": 20
+     }
+    ],
+    "side-plank": [
+     {
+      "time": 25
+     },
+     {
+      "time": 25
+     },
+     {
+      "time": 55
+     }
+    ]
+   }
+  },
+  {
+   "id": "back-2021-06-09",
+   "workout": "back",
+   "date": "2021-06-09",
+   "exercises": {
+    "dumbbell-bent-over-row": [
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     }
+    ],
+    "tripod-dumbbell-row": [
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     }
+    ],
+    "dumbbell-pull-over": [
+     {
+      "weight": 10,
+      "reps": 8
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 12
+     }
+    ],
+    "reverse-grip-dumbbell-row": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 12
+     },
+     {
+      "weight": 14,
+      "reps": 12
+     }
+    ],
+    "dumbbell-bicep-curl": [
+     {
+      "weight": 8,
+      "reps": 10
+     },
+     {
+      "weight": 8,
+      "reps": 10
+     },
+     {
+      "weight": 8,
+      "reps": 8
+     }
+    ],
+    "dumbbell-hammer-curl": [
+     {
+      "weight": 7,
+      "reps": 8
+     },
+     {
+      "weight": 7,
+      "reps": 10
+     },
+     {
+      "weight": 7,
+      "reps": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs2-2021-06-13",
+   "workout": "legs2",
+   "date": "2021-06-13",
+   "exercises": {
+    "dumbbell-squat": [
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "dumbbell-deadlift": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     }
+    ],
+    "dumbbell-split-squat": [
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 12
+     }
+    ],
+    "dumbbell-hip-thrust": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 15
+     },
+     {
+      "weight": 16,
+      "reps": 15
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 16,
+      "reps": 20
+     },
+     {
+      "weight": 16,
+      "reps": 20
+     }
+    ],
+    "dumbbell-side-bends": [
+     {
+      "weight": 14,
+      "reps": 15
+     },
+     {
+      "weight": 14,
+      "reps": 15
+     },
+     {
+      "weight": 16,
+      "reps": 15
+     }
+    ],
+    "plank": [
+     {
+      "time": 25
+     },
+     {
+      "time": 25
+     },
+     {
+      "time": 70
+     }
+    ]
+   }
+  },
+  {
+   "id": "upper-2021-06-14",
+   "workout": "upper",
+   "date": "2021-06-14",
+   "exercises": {
+    "one-arm-dumbbell-rows": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "dumbbell-arnold-press": [
+     {
+      "weight": 10,
+      "reps": 8
+     },
+     {
+      "weight": 10,
+      "reps": 8
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     }
+    ],
+    "incline-dumbbell-press": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     }
+    ],
+    "dumbbell-pinwheel-curl": [
+     {
+      "weight": 9,
+      "reps": 12
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     }
+    ],
+    "overhead-dumbbell-tricep-extension": [
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 12
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     }
+    ],
+    "dumbbell-shrug": [
+     {
+      "weight": 20,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 15
+     },
+     {
+      "weight": 23,
+      "reps": 12
+     }
+    ]
+   }
+  },
+  {
+   "id": "chest-2021-06-16",
+   "workout": "chest",
+   "date": "2021-06-16",
+   "exercises": {
+    "dumbbell-bench-press": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     }
+    ],
+    "incline-dumbbell-bench-press": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "dumbbell-floor-press": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     }
+    ],
+    "standing-dumbbell-press": [
+     {
+      "weight": 7,
+      "reps": 10
+     },
+     {
+      "weight": 8,
+      "reps": 8
+     },
+     {
+      "weight": 8,
+      "reps": 8
+     },
+     {
+      "weight": 8,
+      "reps": 5
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs1-2021-06-21",
+   "workout": "legs1",
+   "date": "2021-06-21",
+   "exercises": {
+    "dumbbell-goblet-squat": [
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     }
+    ],
+    "dumbbell-stiff-leg-deadlift": [
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "dumbbell-rear-lunge": [
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "dumbbell-frog-squat": [
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 11,
+      "reps": 20
+     },
+     {
+      "weight": 11,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     }
+    ],
+    "weighted-crunch": [
+     {
+      "weight": 7,
+      "reps": 20
+     },
+     {
+      "weight": 8,
+      "reps": 20
+     },
+     {
+      "weight": 8,
+      "reps": 20
+     }
+    ],
+    "side-plank": [
+     {
+      "time": 25
+     },
+     {
+      "time": 25
+     },
+     {
+      "time": 40
+     }
+    ]
+   }
+  },
+  {
+   "id": "back-2021-06-23",
+   "workout": "back",
+   "date": "2021-06-23",
+   "exercises": {
+    "dumbbell-bent-over-row": [
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     }
+    ],
+    "tripod-dumbbell-row": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     }
+    ],
+    "dumbbell-pull-over": [
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 12
+     },
+     {
+      "weight": 11,
+      "reps": 12
+     }
+    ],
+    "reverse-grip-dumbbell-row": [
+     {
+      "weight": 14,
+      "reps": 12
+     },
+     {
+      "weight": 16,
+      "reps": 12
+     },
+     {
+      "weight": 16,
+      "reps": 12
+     },
+     {
+      "weight": 16,
+      "reps": 12
+     }
+    ],
+    "dumbbell-bicep-curl": [
+     {
+      "weight": 8,
+      "reps": 10
+     },
+     {
+      "weight": 8,
+      "reps": 15
+     },
+     {
+      "weight": 8,
+      "reps": 12
+     }
+    ],
+    "dumbbell-hammer-curl": [
+     {
+      "weight": 7,
+      "reps": 10
+     },
+     {
+      "weight": 7,
+      "reps": 10
+     },
+     {
+      "weight": 7,
+      "reps": 12
+     }
+    ]
+   }
+  },
+  {
+   "id": "upper-2021-06-28",
+   "workout": "upper",
+   "date": "2021-06-28",
+   "exercises": {
+    "one-arm-dumbbell-rows": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     }
+    ],
+    "dumbbell-arnold-press": [
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "incline-dumbbell-press": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     }
+    ],
+    "dumbbell-pinwheel-curl": [
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     }
+    ],
+    "overhead-dumbbell-tricep-extension": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 12
+     }
+    ],
+    "dumbbell-shrug": [
+     {
+      "weight": 20,
+      "reps": 15
+     },
+     {
+      "weight": 23,
+      "reps": 12
+     },
+     {
+      "weight": 23,
+      "reps": 15
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs2-2021-07-01",
+   "workout": "legs2",
+   "date": "2021-07-01",
+   "exercises": {
+    "dumbbell-squat": [
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     }
+    ],
+    "dumbbell-deadlift": [
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-split-squat": [
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     }
+    ],
+    "dumbbell-hip-thrust": [
+     {
+      "weight": 16,
+      "reps": 15
+     },
+     {
+      "weight": 18,
+      "reps": 15
+     },
+     {
+      "weight": 18,
+      "reps": 15
+     },
+     {
+      "weight": 18,
+      "reps": 15
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 16,
+      "reps": 20
+     },
+     {
+      "weight": 16,
+      "reps": 20
+     },
+     {
+      "weight": 16,
+      "reps": 20
+     },
+     {
+      "weight": 16,
+      "reps": 20
+     }
+    ],
+    "dumbbell-side-bends": [
+     {
+      "weight": 16,
+      "reps": 15
+     },
+     {
+      "weight": 16,
+      "reps": 15
+     },
+     {
+      "weight": 16,
+      "reps": 15
+     }
+    ],
+    "plank": [
+     {
+      "time": 25
+     },
+     {
+      "time": 25
+     },
+     {
+      "time": 60
+     }
+    ]
+   }
+  },
+  {
+   "id": "chest-2021-07-02",
+   "workout": "chest",
+   "date": "2021-07-02",
+   "exercises": {
+    "dumbbell-bench-press": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "incline-dumbbell-bench-press": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-floor-press": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "standing-dumbbell-press": [
+     {
+      "weight": 8,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ],
+    "dumbbell-lateral-raise": [
+     {
+      "weight": 3,
+      "reps": 12
+     },
+     {
+      "weight": 4,
+      "reps": 8
+     },
+     {
+      "weight": 4,
+      "reps": 8
+     }
+    ],
+    "dumbbell-tricep-kickback": [
+     {
+      "weight": 3,
+      "reps": 10
+     },
+     {
+      "weight": 5,
+      "reps": 12
+     },
+     {
+      "weight": 7,
+      "reps": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs1-2021-07-08",
+   "workout": "legs1",
+   "date": "2021-07-08",
+   "exercises": {
+    "dumbbell-goblet-squat": [
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 10
+     },
+     {
+      "weight": 23,
+      "reps": 10
+     }
+    ],
+    "dumbbell-stiff-leg-deadlift": [
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "dumbbell-rear-lunge": [
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "dumbbell-frog-squat": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 16,
+      "reps": 20
+     },
+     {
+      "weight": 16,
+      "reps": 20
+     }
+    ],
+    "weighted-crunch": [
+     {
+      "weight": 8,
+      "reps": 20
+     },
+     {
+      "weight": 9,
+      "reps": 20
+     },
+     {
+      "weight": 10,
+      "reps": 20
+     }
+    ],
+    "side-plank": [
+     {
+      "time": 30
+     },
+     {
+      "time": 30
+     },
+     {
+      "time": 60
+     }
+    ]
+   }
+  },
+  {
+   "id": "back-2021-07-10",
+   "workout": "back",
+   "date": "2021-07-10",
+   "exercises": {
+    "dumbbell-bent-over-row": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "tripod-dumbbell-row": [
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 10
+     }
+    ],
+    "dumbbell-pull-over": [
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 12
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "reverse-grip-dumbbell-row": [
+     {
+      "weight": 16,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     }
+    ],
+    "dumbbell-bicep-curl": [
+     {
+      "weight": 8,
+      "reps": 15
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ],
+    "dumbbell-hammer-curl": [
+     {
+      "weight": 7,
+      "reps": 12
+     },
+     {
+      "weight": 7,
+      "reps": 10
+     },
+     {
+      "weight": 5,
+      "reps": 15
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs2-2021-07-14",
+   "workout": "legs2",
+   "date": "2021-07-14",
+   "exercises": {
+    "dumbbell-squat": [
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "dumbbell-deadlift": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "dumbbell-split-squat": [
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "dumbbell-hip-thrust": [
+     {
+      "weight": 18,
+      "reps": 15
+     },
+     {
+      "weight": 18,
+      "reps": 15
+     },
+     {
+      "weight": 18,
+      "reps": 15
+     },
+     {
+      "weight": 20,
+      "reps": 15
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 16,
+      "reps": 20
+     },
+     {
+      "weight": 18,
+      "reps": 20
+     },
+     {
+      "weight": 18,
+      "reps": 20
+     },
+     {
+      "weight": 18,
+      "reps": 20
+     }
+    ],
+    "dumbbell-side-bends": [
+     {
+      "weight": 18,
+      "reps": 15
+     },
+     {
+      "weight": 18,
+      "reps": 15
+     },
+     {
+      "weight": 18,
+      "reps": 15
+     }
+    ],
+    "plank": [
+     {
+      "time": 30
+     },
+     {
+      "time": 30
+     },
+     {
+      "time": 60
+     }
+    ]
+   }
+  },
+  {
+   "id": "upper-2021-07-15",
+   "workout": "upper",
+   "date": "2021-07-15",
+   "exercises": {
+    "one-arm-dumbbell-rows": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "dumbbell-arnold-press": [
+     {
+      "weight": 11,
+      "reps": 8
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     }
+    ],
+    "incline-dumbbell-press": [
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-pinwheel-curl": [
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "overhead-dumbbell-tricep-extension": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 12
+     },
+     {
+      "weight": 16,
+      "reps": 5
+     }
+    ],
+    "dumbbell-shrug": [
+     {
+      "weight": 23,
+      "reps": 15
+     },
+     {
+      "weight": 23,
+      "reps": 15
+     },
+     {
+      "weight": 23,
+      "reps": 15
+     }
+    ]
+   }
+  },
+  {
+   "id": "chest-2021-08-02",
+   "workout": "chest",
+   "date": "2021-08-02",
+   "exercises": {
+    "dumbbell-bench-press": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     }
+    ],
+    "incline-dumbbell-bench-press": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 5
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "dumbbell-floor-press": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "standing-dumbbell-press": [
+     {
+      "weight": 8,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     }
+    ],
+    "dumbbell-lateral-raise": [
+     {
+      "weight": 4,
+      "reps": 8
+     },
+     {
+      "weight": 4,
+      "reps": 8
+     },
+     {
+      "weight": 4,
+      "reps": 8
+     }
+    ],
+    "dumbbell-tricep-kickback": [
+     {
+      "weight": 7,
+      "reps": 8
+     },
+     {
+      "weight": 7,
+      "reps": 8
+     },
+     {
+      "weight": 7,
+      "reps": 12
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs1-2021-08-02",
+   "workout": "legs1",
+   "date": "2021-08-02",
+   "exercises": {
+    "dumbbell-goblet-squat": [
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 10
+     },
+     {
+      "weight": 23,
+      "reps": 10
+     }
+    ],
+    "dumbbell-stiff-leg-deadlift": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "dumbbell-rear-lunge": [
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     }
+    ],
+    "dumbbell-frog-squat": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 14,
+      "reps": 20
+     },
+     {
+      "weight": 16,
+      "reps": 20
+     },
+     {
+      "weight": 16,
+      "reps": 20
+     }
+    ],
+    "weighted-crunch": [
+     {
+      "weight": 9,
+      "reps": 20
+     },
+     {
+      "weight": 9,
+      "reps": 20
+     },
+     {
+      "weight": 10,
+      "reps": 20
+     }
+    ],
+    "side-plank": [
+     {
+      "time": 30
+     }
+    ]
+   }
+  },
+  {
+   "id": "back-2021-08-05",
+   "workout": "back",
+   "date": "2021-08-05",
+   "exercises": {
+    "dumbbell-bent-over-row": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "tripod-dumbbell-row": [
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     }
+    ],
+    "dumbbell-pull-over": [
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "reverse-grip-dumbbell-row": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     }
+    ],
+    "dumbbell-bicep-curl": [
+     {
+      "weight": 8,
+      "reps": 15
+     },
+     {
+      "weight": 8,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ],
+    "dumbbell-hammer-curl": [
+     {
+      "weight": 7,
+      "reps": 8
+     },
+     {
+      "weight": 7,
+      "reps": 8
+     },
+     {
+      "weight": 7,
+      "reps": 8
+     }
+    ]
+   }
+  },
+  {
+   "id": "upper-2021-08-10",
+   "workout": "upper",
+   "date": "2021-08-10",
+   "exercises": {
+    "one-arm-dumbbell-rows": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     }
+    ],
+    "dumbbell-arnold-press": [
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     },
+     {
+      "weight": 14,
+      "reps": 8
+     }
+    ],
+    "incline-dumbbell-press": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-pinwheel-curl": [
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "overhead-dumbbell-tricep-extension": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "chest-2021-08-18",
+   "workout": "chest",
+   "date": "2021-08-18",
+   "exercises": {
+    "dumbbell-bench-press": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "incline-dumbbell-bench-press": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-floor-press": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "standing-dumbbell-press": [
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     }
+    ],
+    "dumbbell-lateral-raise": [
+     {
+      "weight": 4,
+      "reps": 8
+     },
+     {
+      "weight": 4,
+      "reps": 10
+     },
+     {
+      "weight": 5,
+      "reps": 8
+     }
+    ],
+    "dumbbell-tricep-kickback": [
+     {
+      "weight": 7,
+      "reps": 10
+     },
+     {
+      "weight": 8,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "upper-2021-09-02",
+   "workout": "upper",
+   "date": "2021-09-02",
+   "exercises": {
+    "one-arm-dumbbell-rows": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 23,
+      "reps": 10
+     },
+     {
+      "weight": 23,
+      "reps": 10
+     }
+    ],
+    "dumbbell-arnold-press": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "incline-dumbbell-press": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-pinwheel-curl": [
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "overhead-dumbbell-tricep-extension": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-shrug": [
+     {
+      "weight": 23,
+      "reps": 15
+     },
+     {
+      "weight": 23,
+      "reps": 15
+     },
+     {
+      "weight": 23,
+      "reps": 15
+     }
+    ]
+   }
+  },
+  {
+   "id": "chest-2021-09-05",
+   "workout": "chest",
+   "date": "2021-09-05",
+   "exercises": {
+    "dumbbell-bench-press": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "incline-dumbbell-bench-press": [
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "standing-dumbbell-press": [
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 8
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ],
+    "dumbbell-lateral-raise": [
+     {
+      "weight": 5,
+      "reps": 8
+     },
+     {
+      "weight": 5,
+      "reps": 8
+     },
+     {
+      "weight": 5,
+      "reps": 8
+     }
+    ],
+    "dumbbell-tricep-kickback": [
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "upper-2021-09-14",
+   "workout": "upper",
+   "date": "2021-09-14",
+   "exercises": {
+    "one-arm-dumbbell-rows": [
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 23,
+      "reps": 10
+     },
+     {
+      "weight": 23,
+      "reps": 10
+     }
+    ],
+    "dumbbell-arnold-press": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "incline-dumbbell-press": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-pinwheel-curl": [
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ],
+    "overhead-dumbbell-tricep-extension": [
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     },
+     {
+      "weight": 16,
+      "reps": 10
+     }
+    ],
+    "dumbbell-shrug": [
+     {
+      "weight": 23,
+      "reps": 15
+     },
+     {
+      "weight": 23,
+      "reps": 15
+     },
+     {
+      "weight": 23,
+      "reps": 15
+     }
+    ]
+   }
+  },
+  {
+   "id": "back-2021-09-21",
+   "workout": "back",
+   "date": "2021-09-21",
+   "exercises": {
+    "dumbbell-bent-over-row": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "tripod-dumbbell-row": [
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     },
+     {
+      "weight": 23,
+      "reps": 8
+     }
+    ],
+    "dumbbell-pull-over": [
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "reverse-grip-dumbbell-row": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     }
+    ],
+    "dumbbell-bicep-curl": [
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ],
+    "dumbbell-hammer-curl": [
+     {
+      "weight": 7,
+      "reps": 10
+     },
+     {
+      "weight": 7,
+      "reps": 15
+     }
+    ]
+   }
+  },
+  {
+   "id": "upper-2021-11-10",
+   "workout": "upper",
+   "date": "2021-11-10",
+   "exercises": {
+    "one-arm-dumbbell-rows": [
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     }
+    ],
+    "dumbbell-arnold-press": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "incline-dumbbell-press": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "dumbbell-pinwheel-curl": [
+     {
+      "weight": 11,
+      "reps": 10
+     },
+     {
+      "weight": 11,
+      "reps": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs1-2023-02-02",
+   "workout": "legs1",
+   "date": "2023-02-02",
+   "exercises": {
+    "dumbbell-goblet-squat": [
+     {
+      "weight": 10,
+      "reps": 8
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 10
+     }
+    ],
+    "dumbbell-stiff-leg-deadlift": [
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     },
+     {
+      "weight": 16,
+      "reps": 8
+     }
+    ],
+    "dumbbell-rear-lunge": [
+     {
+      "weight": 15,
+      "reps": 8
+     },
+     {
+      "weight": 15,
+      "reps": 8
+     },
+     {
+      "weight": 15,
+      "reps": 8
+     },
+     {
+      "weight": 15,
+      "reps": 8
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 10,
+      "reps": 20
+     },
+     {
+      "weight": 10,
+      "reps": 20
+     },
+     {
+      "weight": 10,
+      "reps": 20
+     },
+     {
+      "weight": 12.5,
+      "reps": 20
+     }
+    ],
+    "weighted-crunch": [
+     {
+      "weight": 5,
+      "reps": 20
+     },
+     {
+      "weight": 5,
+      "reps": 20
+     },
+     {
+      "weight": 5,
+      "reps": 20
+     }
+    ]
+   }
+  },
+  {
+   "id": "back-2023-02-14",
+   "workout": "back",
+   "date": "2023-02-14",
+   "exercises": {
+    "dumbbell-bent-over-row": [
+     {
+      "weight": 7.5,
+      "reps": 8
+     },
+     {
+      "weight": 7.5,
+      "reps": 10
+     },
+     {
+      "weight": 7.5,
+      "reps": 10
+     },
+     {
+      "weight": 7.5,
+      "reps": 12
+     }
+    ],
+    "tripod-dumbbell-row": [
+     {
+      "weight": 10,
+      "reps": 8
+     },
+     {
+      "weight": 10,
+      "reps": 12
+     },
+     {
+      "weight": 12.5,
+      "reps": 8
+     },
+     {
+      "weight": 12.5,
+      "reps": 10
+     }
+    ],
+    "dumbbell-pull-over": [
+     {
+      "weight": 5,
+      "reps": 10
+     },
+     {
+      "weight": 5,
+      "reps": 12
+     },
+     {
+      "weight": 7.5,
+      "reps": 8
+     }
+    ],
+    "reverse-grip-dumbbell-row": [
+     {
+      "weight": 7.5,
+      "reps": 8
+     },
+     {
+      "weight": 7.5,
+      "reps": 10
+     },
+     {
+      "weight": 7.5,
+      "reps": 12
+     },
+     {
+      "weight": 7.5,
+      "reps": 12
+     }
+    ],
+    "dumbbell-bicep-curl": [
+     {
+      "weight": 5,
+      "reps": 10
+     },
+     {
+      "weight": 5,
+      "reps": 15
+     },
+     {
+      "weight": 5,
+      "reps": 15
+     }
+    ],
+    "dumbbell-hammer-curl": [
+     {
+      "weight": 5,
+      "reps": 10
+     },
+     {
+      "weight": 5,
+      "reps": 10
+     },
+     {
+      "weight": 5,
+      "reps": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "legs2-2023-02-21",
+   "workout": "legs2",
+   "date": "2023-02-21",
+   "exercises": {
+    "dumbbell-squat": [
+     {
+      "weight": 7.5,
+      "reps": 8
+     },
+     {
+      "weight": 7.5,
+      "reps": 10
+     },
+     {
+      "weight": 7.5,
+      "reps": 10
+     },
+     {
+      "weight": 10,
+      "reps": 8
+     }
+    ],
+    "dumbbell-deadlift": [
+     {
+      "weight": 5,
+      "reps": 8
+     },
+     {
+      "weight": 5,
+      "reps": 10
+     },
+     {
+      "weight": 5,
+      "reps": 10
+     },
+     {
+      "weight": 7.5,
+      "reps": 8
+     }
+    ],
+    "dumbbell-split-squat": [
+     {
+      "weight": 2.5,
+      "reps": 8
+     },
+     {
+      "weight": 2.5,
+      "reps": 10
+     },
+     {
+      "weight": 2.5,
+      "reps": 12
+     }
+    ],
+    "dumbbell-hip-thrust": [
+     {
+      "weight": 7.5,
+      "reps": 15
+     },
+     {
+      "weight": 10,
+      "reps": 15
+     },
+     {
+      "weight": 10,
+      "reps": 15
+     },
+     {
+      "weight": 10,
+      "reps": 15
+     }
+    ],
+    "dumbbell-calf-raise": [
+     {
+      "weight": 7.5,
+      "reps": 20
+     },
+     {
+      "weight": 7.5,
+      "reps": 20
+     },
+     {
+      "weight": 7.5,
+      "reps": 20
+     },
+     {
+      "weight": 7.5,
+      "reps": 20
+     }
+    ],
+    "dumbbell-side-bends": [
+     {
+      "weight": 7.5,
+      "reps": 15
+     },
+     {
+      "weight": 7.5,
+      "reps": 15
+     },
+     {
+      "weight": 7.5,
+      "reps": 15
+     }
+    ],
+    "plank": [
+     {
+      "time": 30
+     },
+     {
+      "time": 30
+     },
+     {
+      "time": 50
+     }
+    ]
+   }
+  },
+  {
+   "id": "chest-2025-02-23",
+   "workout": "chest",
+   "date": "2025-02-23",
+   "exercises": {
+    "dumbbell-bench-press": [
+     {
+      "weight": 7,
+      "reps": 8
+     },
+     {
+      "weight": 7,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     },
+     {
+      "weight": 9,
+      "reps": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "back-2026-07-13",
+   "workout": "back",
+   "date": "2026-07-13",
+   "exercises": {
+    "dumbbell-bent-over-row": [
+     {
+      "weight": 14,
+      "reps": 10
+     },
+     {
+      "weight": 18,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "tripod-dumbbell-row": [
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     }
+    ],
+    "dumbbell-pull-over": [
+     {
+      "weight": 10,
+      "reps": 12
+     },
+     {
+      "weight": 12.5,
+      "reps": 12
+     },
+     {
+      "weight": 14,
+      "reps": 10
+     }
+    ],
+    "reverse-grip-dumbbell-row": [
+     {
+      "weight": 14,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     }
+    ],
+    "dumbbell-bicep-curl": [
+     {
+      "weight": 8,
+      "reps": 12
+     },
+     {
+      "weight": 8,
+      "reps": 8
+     }
+    ],
+    "dumbbell-hammer-curl": [
+     {
+      "weight": 4,
+      "reps": 12
+     }
+    ]
+   }
+  },
+  {
+   "id": "back-2026-10-14",
+   "workout": "back",
+   "date": "2026-10-14",
+   "exercises": {
+    "dumbbell-bent-over-row": [
+     {
+      "weight": 14,
+      "reps": 12
+     },
+     {
+      "weight": 18,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     }
+    ],
+    "tripod-dumbbell-row": [
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 22,
+      "reps": 8
+     },
+     {
+      "weight": 22,
+      "reps": 10
+     },
+     {
+      "weight": 22,
+      "reps": 10
+     }
+    ],
+    "dumbbell-pull-over": [
+     {
+      "weight": 10,
+      "reps": 12
+     },
+     {
+      "weight": 12,
+      "reps": 12
+     },
+     {
+      "weight": 14,
+      "reps": 12
+     }
+    ],
+    "reverse-grip-dumbbell-row": [
+     {
+      "weight": 16,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 12
+     },
+     {
+      "weight": 20,
+      "reps": 10
+     },
+     {
+      "weight": 20,
+      "reps": 8
+     }
+    ],
+    "dumbbell-bicep-curl": [
+     {
+      "weight": 8,
+      "reps": 8
+     },
+     {
+      "weight": 6,
+      "reps": 12
+     },
+     {
+      "weight": 6,
+      "reps": 12
+     }
+    ],
+    "dumbbell-hammer-curl": [
+     {
+      "weight": 8,
+      "reps": 8
+     },
+     {
+      "weight": 6,
+      "reps": 8
+     },
+     {
+      "weight": 2,
+      "reps": 15
+     }
+    ]
+   }
+  }
+ ]
+}

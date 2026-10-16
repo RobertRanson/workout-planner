@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Workout Planner</title>
+  <meta name="description" content="Dumbbell workout tracker: log sets, see last session, follow the plan.">
+  <meta name="theme-color" content="#0f1115">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/" class="brand" aria-label="Home">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M2 10h2V8h2v8H4v-2H2v-4Zm4-3h3v10H6V7Zm9 0h3v10h-3V7Zm3 1h2v2h2v4h-2v2h-2V8ZM9 11h6v2H9v-2Z"/></svg>
+      <span>Workout Planner</span>
+    </a>
+    <nav class="tabs">
+      <a href="#/" data-tab="home">Today</a>
+      <a href="#/history" data-tab="history">History</a>
+      <a href="#/settings" data-tab="settings" aria-label="Settings">⚙︎</a>
+    </nav>
+  </header>
+  <main id="app" tabindex="-1"></main>
+  <div id="rest" class="rest" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
