@@ -12,7 +12,7 @@ A simple, phone-friendly workout tracker that replaces my Google Sheets tracker.
   - A rest timer starts after each set, with a beep and a vibration when it's done.
   - Progression hints, e.g. "you hit the top of the rep range on every set — go heavier".
   - The screen stays awake during a workout, and a half-finished workout survives a reload or a closed tab.
-- **Exercise videos**: the Muscle & Strength video (YouTube or Vimeo) is embedded on each exercise from `data/videos.json`. Tap **＋ Add video / Change video** to paste your own YouTube or Vimeo link, which overrides the built-in one on that device.
+- **Exercise videos**: the Muscle & Strength video (YouTube or Vimeo) is embedded on every exercise from `data/videos.json`. Tap **＋ Add video / Change video** to paste your own YouTube or Vimeo link, which overrides the built-in one on that device.
 - **History**: full calendar by year, every session (tap to view, edit or delete), and a per-exercise progress chart.
 - **Backup**: data lives in your browser's local storage. Settings → Export/Import JSON moves it between devices. CSV export is also available.
 - **Installable**: on iPhone, open the site in Safari, then Share → Add to Home Screen. It works offline once loaded.
@@ -31,7 +31,7 @@ pip install openpyxl
 python3 tools/import_xlsx.py Workout_Tracker.xlsx data/seed.json
 ```
 
-Exercise videos come from a separate sheet (columns: Workout Day, Exercise, Platform, Video ID, …, Source URL):
+Exercise videos come from a separate sheet. Every tab with Workout Day, Exercise, Platform, Video ID and (Exercise) Source URL columns is read, and rows are matched to exercises by URL, then by name:
 
 ```sh
 python3 tools/import_videos.py Workout_Video_IDs.xlsx data/videos.json

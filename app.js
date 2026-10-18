@@ -13,7 +13,7 @@ const $toast = document.getElementById('toast');
 
 let db = null;      // { version, workouts, sessions, videos, settings }
 let draft = null;   // in-progress session
-let builtinVideos = {}; // Muscle & Strength page URL -> video URL (data/videos.json)
+let builtinVideos = {}; // "workoutId/exerciseId" -> { video, link } (data/videos.json)
 
 /* ---------- utils ---------- */
 
@@ -155,7 +155,12 @@ function parseVideo(url) {
 }
 const videoKey = (wid, eid) => `${wid}/${eid}`;
 /** A video you added yourself wins over the built-in one for that exercise. */
-const videoFor = (wid, ex) => parseVideo(db.videos[videoKey(wid, ex.id)]) || parseVideo(builtinVideos[ex.link]);
+const videoFor = (wid, ex) => parseVideo(db.videos[videoKey(wid, ex.id)]) || parseVideo(builtinVideos[videoKey(wid, ex.id)]?.video);
+const linkFor = (wid, ex) => ex.link || builtinVideos[videoKey(wid, ex.id)]?.link || null;
+const howTo = (wid, ex) => {
+  const link = linkFor(wid, ex);
+  return link ? `<a class="btn" href="${esc(link)}" target="_blank" rel="noopener">How-to (Muscle &amp; Strength) ↗</a>` : '';
+};
 function videoEmbed(v, title) {
   if (!v) return '';
   const src = v.platform === 'vimeo'
@@ -399,7 +404,7 @@ function viewSession() {
 
       ${videoEmbed(vid, ex.name)}
       <div class="vidbar">
-        ${ex.link ? `<a class="btn" href="${esc(ex.link)}" target="_blank" rel="noopener">How-to (Muscle &amp; Strength) ↗</a>` : ''}
+        ${howTo(w.id, ex)}
         <button class="btn" data-act="video">${vid ? 'Change video' : '＋ Add video'}</button>
         ${vid ? '' : `<a class="btn ghost" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent('Muscle and Strength ' + ex.name)}">Find on YouTube ↗</a>`}
       </div>
@@ -757,7 +762,7 @@ function viewExercise(wid, eid) {
     <p class="muted">${esc(repText(ex))}${best != null ? ` · best ${best}${ex.kind === 'time' ? 's' : ' ' + esc(db.settings.unit)}` : ''}</p>
     ${videoEmbed(vid, ex.name)}
     <div class="vidbar">
-      ${ex.link ? `<a class="btn" href="${esc(ex.link)}" target="_blank" rel="noopener">How-to (Muscle &amp; Strength) ↗</a>` : ''}
+      ${howTo(wid, ex)}
       <button class="btn" data-act="video">${vid ? 'Change video' : '＋ Add video'}</button>
     </div>
     <section class="card">

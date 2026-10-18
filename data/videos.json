@@ -1,24 +1,134 @@
 {
- "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-kickback.html": "https://www.youtube.com/watch?v=BL9CzOQZDrs",
- "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-row.html": "https://www.youtube.com/watch?v=DhewkuU_95s",
- "https://www.muscleandstrength.com/exercises/chest-supported-dumbbell-row": "https://www.youtube.com/watch?v=oKNjFM1bxAs",
- "https://www.muscleandstrength.com/exercises/dumbbell-deadlift.html": "https://vimeo.com/1082967268",
- "https://www.muscleandstrength.com/exercises/dumbbell-floor-press.html": "https://www.youtube.com/watch?v=gaBOfLlIXjs",
- "https://www.muscleandstrength.com/exercises/dumbbell-lateral-raise.html": "https://vimeo.com/760008500",
- "https://www.muscleandstrength.com/exercises/dumbbell-pullover.html": "https://vimeo.com/760008438",
- "https://www.muscleandstrength.com/exercises/dumbbell-shrugs.html": "https://www.youtube.com/watch?v=dj2Gm628kas",
- "https://www.muscleandstrength.com/exercises/dumbbell-side-bends.html": "https://vimeo.com/877885243",
- "https://www.muscleandstrength.com/exercises/dumbbell-split-squat": "https://www.youtube.com/watch?v=EByFmf2LfY8",
- "https://www.muscleandstrength.com/exercises/dumbbell-squat.html": "https://vimeo.com/1077314446",
- "https://www.muscleandstrength.com/exercises/hammer-curl-across-the-body.html": "https://vimeo.com/756794179",
- "https://www.muscleandstrength.com/exercises/incline-dumbbell-bench-press.html": "https://www.youtube.com/watch?v=8nNi8jbbUPE",
- "https://www.muscleandstrength.com/exercises/one-arm-dumbbell-row.html": "https://www.youtube.com/watch?v=YZgVEy6cmaY",
- "https://www.muscleandstrength.com/exercises/reverse-grip-bent-over-dumbbell-row.html": "https://vimeo.com/756788460",
- "https://www.muscleandstrength.com/exercises/seated-arnold-press.html": "https://www.youtube.com/watch?v=hmnZKRpYaV8",
- "https://www.muscleandstrength.com/exercises/seated-dumbbell-calf-raise.html": "https://vimeo.com/756793478",
- "https://www.muscleandstrength.com/exercises/standing-dumbbell-curl.html": "https://vimeo.com/756794078",
- "https://www.muscleandstrength.com/exercises/standing-dumbbell-press.html": "https://vimeo.com/760002177",
- "https://www.muscleandstrength.com/exercises/standing-hammer-curl.html": "https://vimeo.com/756794163",
- "https://www.muscleandstrength.com/exercises/tripod-dumbbell-row": "https://www.youtube.com/watch?v=78Z2mk9LQoI",
- "https://www.muscleandstrength.com/exercises/two-arm-standing-dumbbell-extension.html": "https://www.youtube.com/watch?v=VjmgzEmODnI"
+ "back/dumbbell-bent-over-row": {
+  "link": "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-row.html",
+  "video": "https://www.youtube.com/watch?v=DhewkuU_95s"
+ },
+ "back/dumbbell-bicep-curl": {
+  "link": "https://www.muscleandstrength.com/exercises/standing-dumbbell-curl.html",
+  "video": "https://vimeo.com/756794078"
+ },
+ "back/dumbbell-hammer-curl": {
+  "link": "https://www.muscleandstrength.com/exercises/standing-hammer-curl.html",
+  "video": "https://vimeo.com/756794163"
+ },
+ "back/dumbbell-pull-over": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-pullover.html",
+  "video": "https://vimeo.com/760008438"
+ },
+ "back/reverse-grip-dumbbell-row": {
+  "link": "https://www.muscleandstrength.com/exercises/reverse-grip-bent-over-dumbbell-row.html",
+  "video": "https://vimeo.com/756788460"
+ },
+ "back/tripod-dumbbell-row": {
+  "link": "https://www.muscleandstrength.com/exercises/tripod-dumbbell-row",
+  "video": "https://www.youtube.com/watch?v=78Z2mk9LQoI"
+ },
+ "chest/dumbbell-bench-press": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-bench-press.html",
+  "video": "https://www.youtube.com/watch?v=dGqI0Z5ul4k"
+ },
+ "chest/dumbbell-floor-press": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-floor-press.html",
+  "video": "https://www.youtube.com/watch?v=gaBOfLlIXjs"
+ },
+ "chest/dumbbell-lateral-raise": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-lateral-raise.html",
+  "video": "https://vimeo.com/760008500"
+ },
+ "chest/dumbbell-tricep-kickback": {
+  "link": "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-kickback.html",
+  "video": "https://www.youtube.com/watch?v=BL9CzOQZDrs"
+ },
+ "chest/incline-dumbbell-bench-press": {
+  "link": "https://www.muscleandstrength.com/exercises/incline-dumbbell-bench-press.html",
+  "video": "https://www.youtube.com/watch?v=8nNi8jbbUPE"
+ },
+ "chest/standing-dumbbell-press": {
+  "link": "https://www.muscleandstrength.com/exercises/standing-dumbbell-press.html",
+  "video": "https://vimeo.com/760002177"
+ },
+ "legs1/dumbbell-calf-raise": {
+  "link": "https://www.muscleandstrength.com/exercises/seated-dumbbell-calf-raise.html",
+  "video": "https://vimeo.com/756793478"
+ },
+ "legs1/dumbbell-frog-squat": {
+  "link": "https://www.muscleandstrength.com/exercises/frog-squat.html",
+  "video": "https://vimeo.com/877881989"
+ },
+ "legs1/dumbbell-goblet-squat": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+  "video": "https://www.youtube.com/watch?v=5Y3KW5rWMh4"
+ },
+ "legs1/dumbbell-rear-lunge": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-rear-lunge.html",
+  "video": "https://www.youtube.com/watch?v=Ix9QZ3Pnneo"
+ },
+ "legs1/dumbbell-stiff-leg-deadlift": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-stiff-leg-deadlift.html",
+  "video": "https://vimeo.com/877880547"
+ },
+ "legs1/side-plank": {
+  "link": "https://www.muscleandstrength.com/exercises/side-hover.html",
+  "video": "https://vimeo.com/877885425"
+ },
+ "legs1/weighted-crunch": {
+  "link": "https://www.muscleandstrength.com/exercises/weighted-crunch.html",
+  "video": "https://www.youtube.com/watch?v=6kHg3JAFNFo"
+ },
+ "legs2/dumbbell-calf-raise": {
+  "link": "https://www.muscleandstrength.com/exercises/seated-dumbbell-calf-raise.html",
+  "video": "https://vimeo.com/756793478"
+ },
+ "legs2/dumbbell-deadlift": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-deadlift.html",
+  "video": "https://vimeo.com/1082967268"
+ },
+ "legs2/dumbbell-hip-thrust": {
+  "link": "https://www.muscleandstrength.com/exercises/barbell-hip-thrust",
+  "video": "https://www.youtube.com/watch?v=lAnqN0J_p5A"
+ },
+ "legs2/dumbbell-side-bends": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-side-bends.html",
+  "video": "https://vimeo.com/877885243"
+ },
+ "legs2/dumbbell-split-squat": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-split-squat",
+  "video": "https://www.youtube.com/watch?v=EByFmf2LfY8"
+ },
+ "legs2/dumbbell-squat": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-squat.html",
+  "video": "https://vimeo.com/1077314446"
+ },
+ "legs2/plank": {
+  "link": "https://www.muscleandstrength.com/exercises/hover.html",
+  "video": "https://vimeo.com/877881002"
+ },
+ "upper/chest-supported-dumbbell-row": {
+  "link": "https://www.muscleandstrength.com/exercises/chest-supported-dumbbell-row",
+  "video": "https://www.youtube.com/watch?v=oKNjFM1bxAs"
+ },
+ "upper/dumbbell-arnold-press": {
+  "link": "https://www.muscleandstrength.com/exercises/seated-arnold-press.html",
+  "video": "https://www.youtube.com/watch?v=hmnZKRpYaV8"
+ },
+ "upper/dumbbell-pinwheel-curl": {
+  "link": "https://www.muscleandstrength.com/exercises/hammer-curl-across-the-body.html",
+  "video": "https://vimeo.com/756794179"
+ },
+ "upper/dumbbell-shrug": {
+  "link": "https://www.muscleandstrength.com/exercises/dumbbell-shrugs.html",
+  "video": "https://www.youtube.com/watch?v=dj2Gm628kas"
+ },
+ "upper/incline-dumbbell-press": {
+  "link": "https://www.muscleandstrength.com/exercises/incline-dumbbell-bench-press.html",
+  "video": "https://www.youtube.com/watch?v=8nNi8jbbUPE"
+ },
+ "upper/one-arm-dumbbell-rows": {
+  "link": "https://www.muscleandstrength.com/exercises/one-arm-dumbbell-row.html",
+  "video": "https://www.youtube.com/watch?v=YZgVEy6cmaY"
+ },
+ "upper/overhead-dumbbell-tricep-extension": {
+  "link": "https://www.muscleandstrength.com/exercises/two-arm-standing-dumbbell-extension.html",
+  "video": "https://www.youtube.com/watch?v=VjmgzEmODnI"
+ }
 }
