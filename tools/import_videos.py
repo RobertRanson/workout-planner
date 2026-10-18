@@ -37,14 +37,19 @@ def rows(path):
         idx = {h: i for i, h in enumerate(header)}
         src = idx.get("source url", idx.get("exercise source url"))
         day = idx.get("workout day", idx.get("workout"))
-        if None in (day, idx.get("exercise"), idx.get("platform"), idx.get("video id")):
+        plat = idx.get("platform", idx.get("youtube platform"))
+        vid = idx.get("video id", idx.get("youtube video id"))
+        search = idx.get("youtube search", idx.get("notes / search url"))
+        if None in (day, idx.get("exercise"), plat, vid):
             continue
         for r in ws.iter_rows(min_row=2, values_only=True):
             yield {
                 "day": str(r[day] or ""),
                 "name": str(r[idx["exercise"]] or ""),
-                "platform": str(r[idx["platform"]] or "").strip().lower(),
-                "id": str(r[idx["video id"]] or "").strip(),
+                "platform": str(r[plat] or "").strip().lower(),
+                "id": str(r[vid] or "").strip(),
+                "search": next(iter(re.findall(r"https://www\.youtube\.com/results\?\S+", str(r[search] or ""))), None)
+                if search is not None else None,
                 "link": str(r[src] or "").strip() if src is not None else "",
             }
 
@@ -61,11 +66,7 @@ def main(dst, *sources):
 
 def apply(row, workouts, out, unmatched, replacing):
     wid = workout_id(row["day"])
-    if not wid or not row["id"]:
-        return
-    url = {"youtube": f"https://www.youtube.com/watch?v={row['id']}",
-           "vimeo": f"https://vimeo.com/{row['id']}"}.get(row["platform"])
-    if not url:
+    if not wid:
         return
     w = next(w for w in workouts if w["id"] == wid)
     ex = next((e for e in w["exercises"] if e["link"] and e["link"] == row["link"]), None) \
@@ -74,8 +75,16 @@ def apply(row, workouts, out, unmatched, replacing):
         unmatched.append(f"{row['day']}: {row['name']}")
         return
     key = f"{wid}/{ex['id']}"
+    url = {"youtube": f"https://www.youtube.com/watch?v={row['id']}",
+           "vimeo": f"https://vimeo.com/{row['id']}"}.get(row["platform"]) if row["id"] else None
     if replacing:  # swap the video for this one exercise, keep its how-to link
-        out[key] = {**out.get(key, {}), "video": url}
+        if url:
+            out[key] = {**out.get(key, {}), "video": url}
+            out[key].pop("search", None)
+        elif row.get("search") and "vimeo" in out.get(key, {}).get("video", ""):
+            out[key]["search"] = row["search"]
+        return
+    if not url:
         return
     link = ex["link"] or (row["link"] if "muscleandstrength.com" in row["link"] else None)
     for w2 in workouts:

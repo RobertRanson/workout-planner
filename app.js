@@ -2,7 +2,7 @@
  * All data lives in localStorage on this device; use Settings → Export to back it up. */
 'use strict';
 
-const APP_VERSION = '2026-10-18.3';
+const APP_VERSION = '2026-10-18.4';
 const STORE_KEY = 'wp:data:v1';
 const DRAFT_KEY = 'wp:draft:v1';
 const ROTATION = ['chest', 'legs1', 'back', 'legs2', 'upper'];
@@ -158,18 +158,20 @@ const videoKey = (wid, eid) => `${wid}/${eid}`;
 /** A video you added yourself wins over the built-in one for that exercise. */
 const videoFor = (wid, ex) => parseVideo(db.videos[videoKey(wid, ex.id)]) || parseVideo(builtinVideos[videoKey(wid, ex.id)]?.video);
 const linkFor = (wid, ex) => ex.link || builtinVideos[videoKey(wid, ex.id)]?.link || null;
+const searchFor = (wid, ex) => builtinVideos[videoKey(wid, ex.id)]?.search
+  || `https://www.youtube.com/results?search_query=${encodeURIComponent(ex.name)}`;
 const howTo = (wid, ex) => {
   const link = linkFor(wid, ex);
   return link ? `<a class="btn" href="${esc(link)}" target="_blank" rel="noopener">How-to (Muscle &amp; Strength) ↗</a>` : '';
 };
-function videoEmbed(v, title, link) {
+function videoEmbed(v, title, link, search) {
   if (!v) return '';
   const src = v.platform === 'vimeo'
     ? `https://player.vimeo.com/video/${v.id}?dnt=1&playsinline=1`
     : `https://www.youtube-nocookie.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1`;
   // Some Muscle & Strength Vimeo videos only play on their own site; the player can't tell us, so offer a way out.
   const note = v.platform === 'vimeo'
-    ? `<p class="small muted vidnote">Says it can't be played here? ${link ? `<a href="${esc(link)}" target="_blank" rel="noopener">Watch it on Muscle &amp; Strength ↗</a> or ` : ''}tap Change video to use a YouTube link.</p>`
+    ? `<p class="small muted vidnote">Says it can't be played here? ${link ? `<a href="${esc(link)}" target="_blank" rel="noopener">Watch it on Muscle &amp; Strength ↗</a>, or ` : ''}${search ? `<a href="${esc(search)}" target="_blank" rel="noopener">search YouTube ↗</a>, copy a video's link and ` : ''}tap Change video to paste it.</p>`
     : '';
   return `<div class="video"><iframe src="${src}" title="${esc(title)} video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe></div>${note}`;
 }
@@ -407,7 +409,7 @@ function viewSession() {
       <h1>${esc(ex.name)}</h1>
       <p class="muted">${esc(repText(ex))}${prev ? ` · last time ${esc(fmtDate(prev.date))}` : ' · first time logging this'}</p>
 
-      ${videoEmbed(vid, ex.name, linkFor(w.id, ex))}
+      ${videoEmbed(vid, ex.name, linkFor(w.id, ex), searchFor(w.id, ex))}
       <div class="vidbar">
         ${howTo(w.id, ex)}
         <button class="btn" data-act="video">${vid ? 'Change video' : '＋ Add video'}</button>
@@ -765,7 +767,7 @@ function viewExercise(wid, eid) {
     <p><a href="#/workout/${wid}">← ${esc(w.name)}</a></p>
     <h1>${esc(ex.name)}</h1>
     <p class="muted">${esc(repText(ex))}${best != null ? ` · best ${best}${ex.kind === 'time' ? 's' : ' ' + esc(db.settings.unit)}` : ''}</p>
-    ${videoEmbed(vid, ex.name, linkFor(wid, ex))}
+    ${videoEmbed(vid, ex.name, linkFor(wid, ex), searchFor(wid, ex))}
     <div class="vidbar">
       ${howTo(wid, ex)}
       <button class="btn" data-act="video">${vid ? 'Change video' : '＋ Add video'}</button>
