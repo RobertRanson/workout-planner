@@ -2,7 +2,7 @@
  * All data lives in localStorage on this device; use Settings → Export to back it up. */
 'use strict';
 
-const APP_VERSION = '2026-10-18.4';
+const APP_VERSION = '2026-10-18.5';
 const STORE_KEY = 'wp:data:v1';
 const DRAFT_KEY = 'wp:draft:v1';
 const ROTATION = ['chest', 'legs1', 'back', 'legs2', 'upper'];

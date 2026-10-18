@@ -1,5 +1,5 @@
 // Network-first service worker: always fresh when online, still works offline in the gym.
-const CACHE = 'wp-v7';
+const CACHE = 'wp-v8';
 const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'data/seed.json', 'data/videos.json', 'manifest.webmanifest', 'icon.svg', 'icon-192.png'];
 
 self.addEventListener('install', (e) => {

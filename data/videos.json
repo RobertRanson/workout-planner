@@ -5,8 +5,7 @@
  },
  "back/dumbbell-bicep-curl": {
   "link": "https://www.muscleandstrength.com/exercises/standing-dumbbell-curl.html",
-  "search": "https://www.youtube.com/results?search_query=standing+dumbbell+bicep+curl",
-  "video": "https://vimeo.com/756794078"
+  "video": "https://www.youtube.com/watch?v=V1qprKjuNV8"
  },
  "back/dumbbell-hammer-curl": {
   "link": "https://www.muscleandstrength.com/exercises/standing-hammer-curl.html",
@@ -18,8 +17,7 @@
  },
  "back/reverse-grip-dumbbell-row": {
   "link": "https://www.muscleandstrength.com/exercises/reverse-grip-bent-over-dumbbell-row.html",
-  "search": "https://www.youtube.com/results?search_query=reverse+grip+bent+over+dumbbell+row",
-  "video": "https://vimeo.com/756788460"
+  "video": "https://www.youtube.com/watch?v=tV24xcCZA5M"
  },
  "back/tripod-dumbbell-row": {
   "link": "https://www.muscleandstrength.com/exercises/tripod-dumbbell-row",
@@ -47,13 +45,11 @@
  },
  "chest/standing-dumbbell-press": {
   "link": "https://www.muscleandstrength.com/exercises/standing-dumbbell-press.html",
-  "search": "https://www.youtube.com/results?search_query=standing+dumbbell+shoulder+press+exercise",
-  "video": "https://vimeo.com/760002177"
+  "video": "https://www.youtube.com/watch?v=guW_ENwLOMI"
  },
  "legs1/dumbbell-calf-raise": {
   "link": "https://www.muscleandstrength.com/exercises/seated-dumbbell-calf-raise.html",
-  "search": "https://www.youtube.com/results?search_query=seated+dumbbell+calf+raise",
-  "video": "https://vimeo.com/756793478"
+  "video": "https://www.youtube.com/watch?v=fFWpWJy8ybU"
  },
  "legs1/dumbbell-frog-squat": {
   "link": "https://www.muscleandstrength.com/exercises/frog-squat.html",
@@ -83,8 +79,7 @@
  },
  "legs2/dumbbell-calf-raise": {
   "link": "https://www.muscleandstrength.com/exercises/seated-dumbbell-calf-raise.html",
-  "search": "https://www.youtube.com/results?search_query=seated+dumbbell+calf+raise",
-  "video": "https://vimeo.com/756793478"
+  "video": "https://www.youtube.com/watch?v=fFWpWJy8ybU"
  },
  "legs2/dumbbell-deadlift": {
   "link": "https://www.muscleandstrength.com/exercises/dumbbell-deadlift.html",
@@ -104,12 +99,11 @@
  },
  "legs2/dumbbell-squat": {
   "link": "https://www.muscleandstrength.com/exercises/dumbbell-squat.html",
-  "search": "https://www.youtube.com/results?search_query=dumbbell+squat+two+dumbbells+at+sides",
-  "video": "https://vimeo.com/1077314446"
+  "video": "https://www.youtube.com/watch?v=v_c67Omje48"
  },
  "legs2/plank": {
   "link": "https://www.muscleandstrength.com/exercises/hover.html",
-  "video": "https://www.youtube.com/watch?v=kEID5CtKwjg"
+  "video": "https://www.youtube.com/watch?v=aJOB8LwFPY8"
  },
  "upper/chest-supported-dumbbell-row": {
   "link": "https://www.muscleandstrength.com/exercises/chest-supported-dumbbell-row",
