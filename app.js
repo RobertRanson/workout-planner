@@ -161,12 +161,16 @@ const howTo = (wid, ex) => {
   const link = linkFor(wid, ex);
   return link ? `<a class="btn" href="${esc(link)}" target="_blank" rel="noopener">How-to (Muscle &amp; Strength) ↗</a>` : '';
 };
-function videoEmbed(v, title) {
+function videoEmbed(v, title, link) {
   if (!v) return '';
   const src = v.platform === 'vimeo'
     ? `https://player.vimeo.com/video/${v.id}?dnt=1&playsinline=1`
     : `https://www.youtube-nocookie.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1`;
-  return `<div class="video"><iframe src="${src}" title="${esc(title)} video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe></div>`;
+  // Some Muscle & Strength Vimeo videos only play on their own site; the player can't tell us, so offer a way out.
+  const note = v.platform === 'vimeo'
+    ? `<p class="small muted vidnote">Says it can't be played here? ${link ? `<a href="${esc(link)}" target="_blank" rel="noopener">Watch it on Muscle &amp; Strength ↗</a> or ` : ''}tap Change video to use a YouTube link.</p>`
+    : '';
+  return `<div class="video"><iframe src="${src}" title="${esc(title)} video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe></div>${note}`;
 }
 
 /* ---------- rendering ---------- */
@@ -402,7 +406,7 @@ function viewSession() {
       <h1>${esc(ex.name)}</h1>
       <p class="muted">${esc(repText(ex))}${prev ? ` · last time ${esc(fmtDate(prev.date))}` : ' · first time logging this'}</p>
 
-      ${videoEmbed(vid, ex.name)}
+      ${videoEmbed(vid, ex.name, linkFor(w.id, ex))}
       <div class="vidbar">
         ${howTo(w.id, ex)}
         <button class="btn" data-act="video">${vid ? 'Change video' : '＋ Add video'}</button>
@@ -760,7 +764,7 @@ function viewExercise(wid, eid) {
     <p><a href="#/workout/${wid}">← ${esc(w.name)}</a></p>
     <h1>${esc(ex.name)}</h1>
     <p class="muted">${esc(repText(ex))}${best != null ? ` · best ${best}${ex.kind === 'time' ? 's' : ' ' + esc(db.settings.unit)}` : ''}</p>
-    ${videoEmbed(vid, ex.name)}
+    ${videoEmbed(vid, ex.name, linkFor(wid, ex))}
     <div class="vidbar">
       ${howTo(wid, ex)}
       <button class="btn" data-act="video">${vid ? 'Change video' : '＋ Add video'}</button>

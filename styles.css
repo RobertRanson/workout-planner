@@ -269,3 +269,4 @@ textarea { min-height: 80px; resize: vertical; }
   .set { grid-template-columns: 26px 1fr 1fr 44px; gap: 6px; padding: 8px; }
   .tick { width: 44px; }
 }
+.vidnote { margin: -4px 0 10px; }
