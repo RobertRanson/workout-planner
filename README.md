@@ -34,7 +34,7 @@ python3 tools/import_xlsx.py Workout_Tracker.xlsx data/seed.json
 Exercise videos come from a separate sheet. Every tab with Workout Day, Exercise, Platform, Video ID and (Exercise) Source URL columns is read, and rows are matched to exercises by URL, then by name:
 
 ```sh
-python3 tools/import_videos.py Workout_Video_IDs.xlsx data/videos.json
+python3 tools/import_videos.py data/videos.json Workout_Video_IDs.xlsx Workout_YouTube_Replacements.xlsx
 ```
 
 The app only reads the seed on first load, or on Settings → Reset. Abs workouts are not imported.
