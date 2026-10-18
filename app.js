@@ -13,6 +13,7 @@ const $toast = document.getElementById('toast');
 
 let db = null;      // { version, workouts, sessions, videos, settings }
 let draft = null;   // in-progress session
+let builtinVideos = {}; // Muscle & Strength page URL -> video URL (data/videos.json)
 
 /* ---------- utils ---------- */
 
@@ -74,6 +75,7 @@ async function load() {
     save();
   }
   db.videos ||= {};
+  try { builtinVideos = await fetch('data/videos.json').then((r) => (r.ok ? r.json() : {})); } catch (e) { builtinVideos = {}; }
   db.settings = { ...DEFAULT_SETTINGS, ...(db.settings || {}) };
   applyTheme();
 }
@@ -140,14 +142,27 @@ function progressionHint(ex, prev) {
   return null;
 }
 
-function ytId(url) {
+/** YouTube or Vimeo link -> { platform, id }. */
+function parseVideo(url) {
   if (!url) return null;
   const s = String(url).trim();
-  if (/^[\w-]{11}$/.test(s)) return s;
-  const m = s.match(/(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/|v\/)|youtu\.be\/)([\w-]{11})/);
-  return m ? m[1] : null;
+  const yt = s.match(/(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/|v\/)|youtu\.be\/)([\w-]{11})/);
+  if (yt) return { platform: 'youtube', id: yt[1] };
+  const vm = s.match(/vimeo\.com\/(?:video\/|.*\/)?(\d{6,})/);
+  if (vm) return { platform: 'vimeo', id: vm[1] };
+  if (/^[\w-]{11}$/.test(s)) return { platform: 'youtube', id: s };
+  return null;
 }
 const videoKey = (wid, eid) => `${wid}/${eid}`;
+/** A video you added yourself wins over the built-in one for that exercise. */
+const videoFor = (wid, ex) => parseVideo(db.videos[videoKey(wid, ex.id)]) || parseVideo(builtinVideos[ex.link]);
+function videoEmbed(v, title) {
+  if (!v) return '';
+  const src = v.platform === 'vimeo'
+    ? `https://player.vimeo.com/video/${v.id}?dnt=1&playsinline=1`
+    : `https://www.youtube-nocookie.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1`;
+  return `<div class="video"><iframe src="${src}" title="${esc(title)} video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe></div>`;
+}
 
 /* ---------- rendering ---------- */
 
@@ -363,7 +378,7 @@ function viewSession() {
   const sets = draft.exercises[ex.id];
   const prev = previousSets(w.id, ex.id, draft.id);
   const hint = progressionHint(ex, prev);
-  const vid = ytId(db.videos[videoKey(w.id, ex.id)]);
+  const vid = videoFor(w.id, ex);
   const unit = db.settings.unit;
   const exDone = (e) => draft.exercises[e.id].some((s) => s.done);
 
@@ -382,7 +397,7 @@ function viewSession() {
       <h1>${esc(ex.name)}</h1>
       <p class="muted">${esc(repText(ex))}${prev ? ` · last time ${esc(fmtDate(prev.date))}` : ' · first time logging this'}</p>
 
-      ${vid ? `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${vid}?rel=0&modestbranding=1&playsinline=1" title="${esc(ex.name)} video" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe></div>` : ''}
+      ${videoEmbed(vid, ex.name)}
       <div class="vidbar">
         ${ex.link ? `<a class="btn" href="${esc(ex.link)}" target="_blank" rel="noopener">How-to (Muscle &amp; Strength) ↗</a>` : ''}
         <button class="btn" data-act="video">${vid ? 'Change video' : '＋ Add video'}</button>
@@ -493,25 +508,25 @@ function bindSession(w, ex, prev) {
     });
     saveDraft(); rerender(); toast('Filled from last session — adjust and tick each set');
   });
-  act('video', () => editVideo(w.id, ex));
+  act('video', () => editVideo(w.id, ex, viewSession));
   act('prev', () => { draft.step = Math.max(0, draft.step - 1); saveDraft(); viewSession(); window.scrollTo(0, 0); });
   act('next', () => { draft.step += 1; saveDraft(); viewSession(); window.scrollTo(0, 0); });
 }
 const stripEmpty = (o) => Object.fromEntries(Object.entries(o || {}).filter(([k, v]) => v != null && k !== 'done'));
 
-function editVideo(wid, ex) {
+function editVideo(wid, ex, after) {
   const key = videoKey(wid, ex.id);
   const cur = db.videos[key] || '';
-  const url = prompt(`Paste a YouTube link for "${ex.name}".\nTip: open the Muscle & Strength page, play the video, and copy its YouTube link.\nLeave empty to remove.`, cur);
+  const url = prompt(`Paste a YouTube or Vimeo link for "${ex.name}".\nLeave empty to use the built-in video (if any).`, cur);
   if (url === null) return;
-  if (url.trim() && !ytId(url)) { toast("That doesn't look like a YouTube link"); return; }
+  if (url.trim() && !parseVideo(url)) { toast("That doesn't look like a YouTube or Vimeo link"); return; }
   if (url.trim()) db.videos[key] = url.trim(); else delete db.videos[key];
   // Same exercise in other workouts (same M&S page) gets the same video.
   for (const w of db.workouts) for (const e of w.exercises) {
     if (e !== ex && e.link && e.link === ex.link && !db.videos[videoKey(w.id, e.id)] && url.trim()) db.videos[videoKey(w.id, e.id)] = url.trim();
   }
   save();
-  viewSession();
+  after();
 }
 
 function draftToSession() {
@@ -733,14 +748,14 @@ function viewExercise(wid, eid) {
     const v = ex.kind === 'time' ? Math.max(...sets.map((x) => x?.time || 0)) : topSet(sets)?.weight;
     return { date: s.date, v: isNum(v) ? v : null, sets };
   }).filter((p) => p.v != null);
-  const vid = ytId(db.videos[videoKey(wid, eid)]);
+  const vid = videoFor(wid, ex);
   const best = pts.length ? Math.max(...pts.map((p) => p.v)) : null;
 
   $app.innerHTML = `
     <p><a href="#/workout/${wid}">← ${esc(w.name)}</a></p>
     <h1>${esc(ex.name)}</h1>
     <p class="muted">${esc(repText(ex))}${best != null ? ` · best ${best}${ex.kind === 'time' ? 's' : ' ' + esc(db.settings.unit)}` : ''}</p>
-    ${vid ? `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${vid}?rel=0&modestbranding=1&playsinline=1" title="${esc(ex.name)} video" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe></div>` : ''}
+    ${videoEmbed(vid, ex.name)}
     <div class="vidbar">
       ${ex.link ? `<a class="btn" href="${esc(ex.link)}" target="_blank" rel="noopener">How-to (Muscle &amp; Strength) ↗</a>` : ''}
       <button class="btn" data-act="video">${vid ? 'Change video' : '＋ Add video'}</button>
@@ -757,14 +772,7 @@ function viewExercise(wid, eid) {
           ${ex.kind === 'time' ? '' : `<td>${Math.round(volume(s.exercises[eid]))}</td>`}</tr>`).join('')}
       </tbody></table>
     </section>`;
-  $app.querySelector('[data-act="video"]').addEventListener('click', () => {
-    const key = videoKey(wid, eid);
-    const url = prompt(`Paste a YouTube link for "${ex.name}" (empty to remove):`, db.videos[key] || '');
-    if (url === null) return;
-    if (url.trim() && !ytId(url)) return toast("That doesn't look like a YouTube link");
-    if (url.trim()) db.videos[key] = url.trim(); else delete db.videos[key];
-    save(); viewExercise(wid, eid);
-  });
+  $app.querySelector('[data-act="video"]').addEventListener('click', () => editVideo(wid, ex, () => viewExercise(wid, eid)));
 }
 
 function lineChart(pts) {
@@ -790,7 +798,7 @@ function lineChart(pts) {
 
 function viewSettings() {
   const st = db.settings;
-  const vids = Object.keys(db.videos).length;
+  const vids = db.workouts.reduce((n, w) => n + w.exercises.filter((e) => videoFor(w.id, e)).length, 0);
   const total = db.workouts.reduce((n, w) => n + w.exercises.length, 0);
   $app.innerHTML = `
     <h1>Settings</h1>

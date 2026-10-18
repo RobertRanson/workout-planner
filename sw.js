@@ -1,6 +1,6 @@
 // Network-first service worker: always fresh when online, still works offline in the gym.
-const CACHE = 'wp-v1';
-const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'data/seed.json', 'manifest.webmanifest', 'icon.svg', 'icon-192.png'];
+const CACHE = 'wp-v2';
+const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'data/seed.json', 'data/videos.json', 'manifest.webmanifest', 'icon.svg', 'icon-192.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
