@@ -2,6 +2,7 @@
  * All data lives in localStorage on this device; use Settings → Export to back it up. */
 'use strict';
 
+const APP_VERSION = '2026-10-18.2';
 const STORE_KEY = 'wp:data:v1';
 const DRAFT_KEY = 'wp:draft:v1';
 const ROTATION = ['chest', 'legs1', 'back', 'legs2', 'upper'];
@@ -810,7 +811,7 @@ function viewSettings() {
   const vids = db.workouts.reduce((n, w) => n + w.exercises.filter((e) => videoFor(w.id, e)).length, 0);
   const total = db.workouts.reduce((n, w) => n + w.exercises.length, 0);
   $app.innerHTML = `
-    <h1>Settings</h1>
+    <div class="row split"><h1>Settings</h1><span class="chip">v${APP_VERSION}</span></div>
     <section class="card">
       <label class="field"><span>Rest timer (seconds, 0 = off)</span><input type="number" id="s-rest" min="0" step="15" value="${esc(st.rest)}"></label>
       <label class="field"><span>Weight +/− step</span><input type="number" id="s-step" min="0.25" step="0.25" value="${esc(st.weightStep)}"></label>
@@ -885,5 +886,15 @@ load().then(render).catch((e) => {
   $app.innerHTML = '<div class="card"><h2>Could not load data</h2><p class="muted">Check your connection and reload.</p></div>';
 });
 if ('serviceWorker' in navigator && location.protocol === 'https:') {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
+  // Check for a new version on every launch; when one takes over, reload so the new code runs.
+  // (Any in-progress workout is already saved, so the reload loses nothing.)
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (hadController && !reloaded) { reloaded = true; location.reload(); }
+  });
+  navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then((reg) => {
+    reg.update().catch(() => {});
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
+  }).catch(() => {});
 }
