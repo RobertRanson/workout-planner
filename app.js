@@ -2,7 +2,7 @@
  * All data lives in localStorage on this device; use Settings → Export to back it up. */
 'use strict';
 
-const APP_VERSION = '2026-10-18.5';
+const APP_VERSION = '2026-10-21.1';
 const STORE_KEY = 'wp:data:v1';
 const DRAFT_KEY = 'wp:draft:v1';
 const ROTATION = ['chest', 'legs1', 'back', 'legs2', 'upper'];
@@ -76,9 +76,17 @@ async function load() {
     save();
   }
   db.videos ||= {};
+  applyExercisePatches();
   try { builtinVideos = await fetch('data/videos.json').then((r) => (r.ok ? r.json() : {})); } catch (e) { builtinVideos = {}; }
   db.settings = { ...DEFAULT_SETTINGS, ...(db.settings || {}) };
   applyTheme();
+}
+/** Changes to the workout plan that must also reach installs whose plan is already saved. */
+const EXERCISE_PATCHES = {
+  'legs1/side-plank': { each: true }, // time left and right sides separately
+};
+function applyExercisePatches() {
+  for (const w of db.workouts) for (const e of w.exercises) Object.assign(e, EXERCISE_PATCHES[`${w.id}/${e.id}`] || {});
 }
 function applyTheme() {
   const t = db.settings.theme;
@@ -117,15 +125,24 @@ function topSet(sets) {
   return best;
 }
 const volume = (sets) => (sets || []).reduce((t, s) => t + (s && isNum(s.weight) && isNum(s.reps) ? s.weight * s.reps : 0), 0);
+/** The values logged for each set of an exercise. */
+const fieldsOf = (ex) => (ex.kind !== 'time' ? ['weight', 'reps'] : ex.each ? ['left', 'right'] : ['time']);
+const emptySet = (ex) => ({ ...Object.fromEntries(fieldsOf(ex).map((f) => [f, null])), done: false });
+/** A set's previous value for a field; older side-plank logs have one time for both sides. */
+const prevVal = (p, f) => p?.[f] ?? ((f === 'left' || f === 'right') ? p?.time : undefined) ?? null;
+const holdSeconds = (s) => Math.max(0, ...['time', 'left', 'right'].map((f) => (isNum(s?.[f]) ? s[f] : 0)));
 function setText(s, ex) {
   if (!s) return '—';
-  if (ex?.kind === 'time') return s.time != null ? `${s.time}s` : '—';
+  if (ex?.kind === 'time') {
+    if (s.left != null || s.right != null) return `L ${s.left ?? '–'}s · R ${s.right ?? '–'}s`;
+    return s.time != null ? `${s.time}s` : '—';
+  }
   const w = s.weight ?? '–';
   const r = s.reps ?? '–';
   return `${w} × ${r}`;
 }
 const repText = (ex) => {
-  if (ex.kind === 'time') return `${ex.sets} sets · hold`;
+  if (ex.kind === 'time') return `${ex.sets} sets · hold${ex.each ? ' each side' : ''}`;
   const r = ex.reps ? (ex.reps[0] === ex.reps[1] ? `${ex.reps[0]}` : `${ex.reps[0]}–${ex.reps[1]}`) : '';
   return `${ex.sets} × ${r || 'reps'}${ex.each ? ' each side' : ''}`;
 };
@@ -366,7 +383,7 @@ function startSession(wid, existing) {
       const n = Math.max(ex.sets, old.length);
       return [ex.id, Array.from({ length: n }, (_, i) => {
         const o = old[i];
-        return o ? { ...o, done: true } : (ex.kind === 'time' ? { time: null, done: false } : { weight: null, reps: null, done: false });
+        return o ? { ...o, done: true } : emptySet(ex);
       })];
     })),
   };
@@ -376,7 +393,7 @@ function startSession(wid, existing) {
 function countDone(d) { return Object.values(d.exercises).flat().filter((s) => s.done).length; }
 function discardDraft() {
   if (!confirm('Discard this workout? Logged sets will be lost.')) return;
-  draft = null; saveDraft(); stopRest(); releaseWakeLock(); go('#/');
+  draft = null; saveDraft(); stopRest(); cancelStopwatch(); releaseWakeLock(); go('#/');
 }
 
 function viewSession() {
@@ -418,7 +435,7 @@ function viewSession() {
 
       ${hint ? `<div class="hint ${hint.kind === 'warn' ? 'warn' : ''}">${hint.kind === 'good' ? '💪 ' : '🎯 '}${esc(hint.text)}</div>` : ''}
 
-      <div class="sets">
+      <div class="sets" data-ex="${esc(ex.id)}">
         ${sets.map((s, i) => setRow(ex, s, i, prev?.sets?.[i], unit)).join('')}
       </div>
       <div class="row" style="margin-top:10px">
@@ -439,11 +456,13 @@ function viewSession() {
 function setRow(ex, s, i, p, unit) {
   const prevTxt = p ? setText(p, ex) : '—';
   if (ex.kind === 'time') {
-    return `<div class="set time ${s.done ? 'done' : ''}" data-i="${i}">
+    const label = { time: 'Seconds', left: 'Left side', right: 'Right side' };
+    return `<div class="set time ${ex.each ? 'each' : ''} ${s.done ? 'done' : ''}" data-i="${i}">
       <span class="num">${i + 1}</span>
-      <label>Seconds <span class="prev">last: ${esc(prevTxt)}</span>
-        ${stepper('time', s.time, p?.time)}
-      </label>
+      ${fieldsOf(ex).map((f) => `<label>${label[f]} <span class="prev">last: ${esc(prevVal(p, f) != null ? `${prevVal(p, f)}s` : '—')}</span>
+        ${stepper(f, s[f], prevVal(p, f))}
+        ${swButton(ex.id, i, f)}
+      </label>`).join('')}
       <button class="tick" data-act="tick" aria-label="Set ${i + 1} done">✓</button>
     </div>`;
   }
@@ -484,10 +503,11 @@ function bindSession(w, ex, prev) {
     const f = b.dataset.stepField;
     const p = prev?.sets?.[i];
     const cur = sets[i][f];
-    const base = isNum(cur) ? cur : isNum(p?.[f]) ? p[f] : isNum(sets[i - 1]?.[f]) ? sets[i - 1][f] : 0;
-    const inc = f === 'weight' ? Number(db.settings.weightStep) || 1 : f === 'time' ? 5 : 1;
+    const last = prevVal(p, f);
+    const base = isNum(cur) ? cur : isNum(last) ? last : isNum(sets[i - 1]?.[f]) ? sets[i - 1][f] : 0;
+    const inc = f === 'weight' ? Number(db.settings.weightStep) || 1 : f === 'reps' ? 1 : 5;
     // First tap on an empty field just fills last time's value.
-    const next = !isNum(cur) && isNum(p?.[f]) ? base : Math.max(0, round(base + inc * Number(b.dataset.dir)));
+    const next = !isNum(cur) && isNum(last) ? base : Math.max(0, round(base + inc * Number(b.dataset.dir)));
     sets[i][f] = next;
     b.parentElement.querySelector('input').value = next;
     saveDraft();
@@ -496,27 +516,28 @@ function bindSession(w, ex, prev) {
     const i = rowOf(b);
     const s = sets[i];
     if (s.done) { s.done = false; saveDraft(); return rerender(); }
+    if (sw && sw.exId === ex.id && sw.i === i) stopStopwatch();
     // Empty fields take the value shown as the placeholder (last session), else today's previous set.
-    for (const f of ex.kind === 'time' ? ['time'] : ['weight', 'reps']) {
-      if (s[f] == null) s[f] = prev?.sets?.[i]?.[f] ?? sets[i - 1]?.[f] ?? null;
+    for (const f of fieldsOf(ex)) {
+      if (s[f] == null) s[f] = prevVal(prev?.sets?.[i], f) ?? sets[i - 1]?.[f] ?? null;
     }
-    const hasValue = ex.kind === 'time' ? s.time != null : s.weight != null || s.reps != null;
-    if (!hasValue) { toast('Enter weight and reps first'); return; }
-    s.done = true;
-    saveDraft();
-    const exDone = sets.every((x) => x.done);
-    startRest(exDone ? Math.max(db.settings.rest, 120) : db.settings.rest);
-    rerender();
-    if (exDone && draft.step < w.exercises.length - 1) toast('Exercise done — tap Next when ready');
+    if (!fieldsOf(ex).some((f) => s[f] != null)) { toast(ex.kind === 'time' ? 'Enter a time or use the stopwatch' : 'Enter weight and reps first'); return; }
+    completeSet(w, ex, i);
+  }));
+  $app.querySelectorAll('[data-sw]').forEach((b) => b.addEventListener('click', (e) => {
+    e.preventDefault(); // don't let the surrounding <label> focus the input
+    const i = rowOf(b), f = b.dataset.sw;
+    if (sw && sw.exId === ex.id && sw.i === i && sw.f === f) return stopStopwatch();
+    startStopwatch(w, ex, i, f, prevVal(prev?.sets?.[i], f));
   }));
   const act = (name, fn) => $app.querySelector(`[data-act="${name}"]`)?.addEventListener('click', fn);
-  act('addset', () => { sets.push(ex.kind === 'time' ? { time: null, done: false } : { weight: null, reps: null, done: false }); saveDraft(); rerender(); });
+  act('addset', () => { sets.push(emptySet(ex)); saveDraft(); rerender(); });
   act('rmset', () => { sets.pop(); saveDraft(); rerender(); });
   act('copyall', () => {
     prev.sets.forEach((p, i) => {
       if (!p) return;
-      sets[i] ||= { done: false };
-      for (const f of Object.keys(p)) if (sets[i][f] == null) sets[i][f] = p[f];
+      sets[i] ||= emptySet(ex);
+      for (const f of fieldsOf(ex)) if (sets[i][f] == null) sets[i][f] = prevVal(p, f);
     });
     saveDraft(); rerender(); toast('Filled from last session — adjust and tick each set');
   });
@@ -525,6 +546,75 @@ function bindSession(w, ex, prev) {
   act('next', () => { draft.step += 1; saveDraft(); viewSession(); window.scrollTo(0, 0); });
 }
 const stripEmpty = (o) => Object.fromEntries(Object.entries(o || {}).filter(([k, v]) => v != null && k !== 'done'));
+
+function completeSet(w, ex, i) {
+  const sets = draft.exercises[ex.id];
+  sets[i].done = true;
+  saveDraft();
+  const exDone = sets.every((x) => x.done);
+  startRest(exDone ? Math.max(db.settings.rest, 120) : db.settings.rest);
+  rerenderSession();
+  if (exDone && draft.step < w.exercises.length - 1) toast('Exercise done — tap Next when ready');
+}
+function rerenderSession() {
+  if (location.hash !== '#/session') return;
+  const y = window.scrollY; viewSession(); window.scrollTo(0, y);
+}
+
+/* ----- Stopwatch for timed holds (3-second get-ready countdown, beeps when you pass last time) ----- */
+
+const COUNTDOWN = 3;
+let sw = null; // { w, ex, exId, i, f, t0, target, lastCount, passed, iv }
+const fmtSecs = (n) => `${Math.floor(n / 60)}:${String(n % 60).padStart(2, '0')}`;
+function swButton(exId, i, f) {
+  const on = sw && sw.exId === exId && sw.i === i && sw.f === f;
+  return `<button type="button" class="swbtn ${on ? 'on' : ''}" data-sw="${f}">${on ? swLabel() : '⏱ Start'}</button>`;
+}
+function swLabel() {
+  const ms = Date.now() - sw.t0;
+  return ms < 0 ? `Get ready… ${Math.ceil(-ms / 1000)}` : `■ Stop ${fmtSecs(Math.floor(ms / 1000))}`;
+}
+function startStopwatch(w, ex, i, f, target) {
+  if (sw) stopStopwatch();
+  sw = { w, ex, exId: ex.id, i, f, t0: Date.now() + COUNTDOWN * 1000, target: isNum(target) ? target : null, lastCount: null, passed: false };
+  sw.iv = setInterval(tickStopwatch, 100);
+  requestWakeLock();
+  tickStopwatch();
+}
+function tickStopwatch() {
+  if (!sw) return;
+  const ms = Date.now() - sw.t0;
+  if (ms < 0) {
+    const n = Math.ceil(-ms / 1000);
+    if (n !== sw.lastCount) { sw.lastCount = n; tone(660, 0.08); }
+  } else {
+    if (sw.lastCount !== 0) { sw.lastCount = 0; tone(990, 0.25); navigator.vibrate?.(150); }
+    const secs = Math.floor(ms / 1000);
+    if (sw.target && !sw.passed && secs >= sw.target) { sw.passed = true; beep(); navigator.vibrate?.([100, 60, 100]); toast(`Passed last time (${sw.target}s) 🔥`); }
+  }
+  const row = document.querySelector(`.sets[data-ex="${sw.exId}"] .set[data-i="${sw.i}"]`);
+  const btn = row?.querySelector(`[data-sw="${sw.f}"]`);
+  if (btn) { btn.textContent = swLabel(); btn.classList.add('on'); }
+  const inp = row?.querySelector(`input[data-field="${sw.f}"]`);
+  if (inp && ms >= 0) inp.value = Math.floor(ms / 1000);
+}
+/** Stop and record the hold (a stop during the countdown just cancels). */
+function stopStopwatch() {
+  if (!sw) return;
+  const { w, ex, i, f, t0 } = sw;
+  clearInterval(sw.iv);
+  sw = null;
+  const secs = Math.floor((Date.now() - t0) / 1000);
+  if (secs < 0 || !draft?.exercises[ex.id]?.[i]) return rerenderSession();
+  const set = draft.exercises[ex.id][i];
+  set[f] = secs;
+  saveDraft();
+  const missing = fieldsOf(ex).filter((x) => set[x] == null);
+  if (!missing.length) return completeSet(w, ex, i);
+  rerenderSession();
+  toast(`${secs}s logged — now the ${missing[0]} side`);
+}
+function cancelStopwatch() { if (sw) clearInterval(sw.iv); sw = null; }
 
 function editVideo(wid, ex, after) {
   const key = videoKey(wid, ex.id);
@@ -607,7 +697,7 @@ function viewFinish(w) {
     db.sessions = db.sessions.filter((x) => x.id !== s.id);
     db.sessions.push(s);
     save();
-    draft = null; saveDraft(); stopRest(); releaseWakeLock();
+    draft = null; saveDraft(); stopRest(); cancelStopwatch(); releaseWakeLock();
     toast('Workout saved 💪');
     go('#/');
   });
@@ -653,6 +743,15 @@ $rest.addEventListener('click', (e) => {
   tickRest();
 });
 let audioCtx;
+function tone(freq, dur) {
+  try {
+    audioCtx ||= new (window.AudioContext || window.webkitAudioContext)();
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.frequency.value = freq; g.gain.value = 0.15;
+    o.connect(g).connect(audioCtx.destination);
+    o.start(); o.stop(audioCtx.currentTime + dur);
+  } catch (e) { /* no audio */ }
+}
 function beep() {
   try {
     audioCtx ||= new (window.AudioContext || window.webkitAudioContext)();
@@ -757,7 +856,7 @@ function viewExercise(wid, eid) {
   const rows = sessionsOf(wid).filter((s) => s.exercises?.[eid]?.some(Boolean));
   const pts = rows.map((s) => {
     const sets = s.exercises[eid];
-    const v = ex.kind === 'time' ? Math.max(...sets.map((x) => x?.time || 0)) : topSet(sets)?.weight;
+    const v = ex.kind === 'time' ? Math.max(...sets.map(holdSeconds)) : topSet(sets)?.weight;
     return { date: s.date, v: isNum(v) ? v : null, sets };
   }).filter((p) => p.v != null);
   const vid = videoFor(wid, ex);
@@ -868,13 +967,13 @@ function download(name, text, type) {
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 function toCSV() {
-  const lines = [['date', 'workout', 'exercise', 'set', 'weight', 'reps', 'seconds'].join(',')];
+  const lines = [['date', 'workout', 'exercise', 'set', 'weight', 'reps', 'seconds', 'left_seconds', 'right_seconds'].join(',')];
   const q = (v) => (v == null ? '' : /[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v));
   for (const s of sortedSessions()) {
     const w = workout(s.workout);
     for (const ex of w?.exercises || []) {
       (s.exercises?.[ex.id] || []).forEach((x, i) => {
-        if (x) lines.push([s.date, w.name, ex.name, i + 1, x.weight, x.reps, x.time].map(q).join(','));
+        if (x) lines.push([s.date, w.name, ex.name, i + 1, x.weight, x.reps, x.time, x.left, x.right].map(q).join(','));
       });
     }
   }

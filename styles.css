@@ -184,7 +184,16 @@ section + section { margin-top: 24px; }
   display: grid; grid-template-columns: 34px 1fr 1fr 48px; gap: 8px; align-items: end;
   padding: 10px; border-radius: 12px; background: var(--surface-2);
 }
-.set.time { grid-template-columns: 34px 2fr 48px; }
+.set.time { grid-template-columns: 34px 1fr 48px; }
+.set.time.each { grid-template-columns: 34px 1fr 1fr 48px; }
+.swbtn {
+  margin-top: 6px; min-height: 40px; width: 100%;
+  border-radius: 10px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--text);
+  font: inherit; font-size: .9rem; font-weight: 700; letter-spacing: 0; text-transform: none;
+  font-variant-numeric: tabular-nums; cursor: pointer;
+}
+.swbtn.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .set.done { background: color-mix(in srgb, var(--good) 14%, var(--surface-2)); }
 .set .num { font-weight: 800; color: var(--muted); text-align: center; align-self: center; }
 .set label { display: grid; gap: 2px; font-size: .72rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
